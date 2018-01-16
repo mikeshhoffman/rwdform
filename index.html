@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <!-- Viewport for Bootstrap: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS: -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Assignment 1</title>
+  </head>
+
+  <body>
+
+    <h1>The problems that responsive web design solves</h1>
+    
+    <p>Responsive web design solves the following problems:</p>
+    
+    <ul>
+      <li>
+        There are too many devices to target specifically.
+        Back when there were laptop screens and small smartphone displays, it seemed to make sense to target 2 or 3 specific devices.
+        But there are too many devices now, some with multiple display orientations, so it makes the most sense to sense the current viewport width and then place that within a given range, and define layouts for a given page dynamically, based on the current viewport width.
+      </li>
+      <li>
+        It is difficult to maintain a separate website for each viewport width, as is done with the m-dot approach.
+        In the <em>m-dot</em> approach, a separate version of the web site is created and maintained, for narrow, mobile displays.
+        For example, http://m.amazon.com.
+        This approach is difficult to maintain, and typically resulted in limited functionality, a subset of information, and outdated information.
+      </li>
+      <li>
+        It is cumbersome to serve out different versions of a web page from the server for different viewport widths, as is done in the adaptive-design approach.
+        In the <em>adaptive design</em> approach, the server takes in the width of the display, and then serves out a version of the page that targets that width.
+      </li>
+    </ul>
+
+    <p>
+      <em>Responsive web design</em> dynamically lays out a webpage to fit within displays of various widths on various devices.
+      A flexible grid is typically used.
+    </p>
+    <p>
+    </p>
+    <p>
+      <em>Media queries</em> in CSS define <em>break points</em>, to change the layout when the width of the display (viewport) is within a specified range.
+    </p>
+
+    <p>
+      To request more information about responsive web design:
+    </p>
+
+    <!--
+    The form should contain at least the following:
+
+    o  4 types of inputs (text, number, radio buttons, etc)
+    
+    o  2 required fields
+    
+    o  Some minimal styling (Bootstrap or 1 or 2 custom CSS rules) per:
+        http://www.w3schools.com/html/html_forms.asp
+        http://www.w3schools.com/html/html_form_elements.asp
+        https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms
+
+    The content of the form (questions asked) is up to you, but it should make sense in the context of the page. 
+
+    Have one form field use the “pattern” attribute to match it against a regular expression.
+    -->
+    <form>
+
+      <label>First name:
+        <input type="text" name="firstname" required>
+      </label>
+
+      <label>Last name:
+        <input type="text" name="firstname">
+      </label>
+      <br><br>
+
+      <label>How many unique visitors does your website receive daily?
+        <input type="number" name="traffic">
+      </label>
+      <br><br>
+
+      <label>What would you like to accomplish with a website redesign?
+<!--        <input type="text" name="goals">-->
+        <textarea name="goals" rows="10" cols="30">
+          Goals
+        </textarea>
+      </label>
+      <br><br>
+
+      <label>Email address:
+        <input type="email" name="email" required>
+      </label>
+      <br><br>
+
+      <label>Phone:
+        <input type="text" name="phone" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$">
+      </label>
+      <br><br>
+
+      <fieldset>
+        <legend>Type of site:</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="personal" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Personal website
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="business">
+          <label class="form-check-label" for="exampleRadios2">
+            Business website
+          </label>
+        </div>
+      </fieldset>
+
+      <input type="submit" value="Send" name="submit">
+
+    </form>
+
+    <!-- Scripts for Bootstrap: -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </body>
+</html>

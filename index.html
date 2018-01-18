@@ -15,6 +15,15 @@
       li {
         margin-bottom: 0.5rem;
       }
+      #firstname {
+        width: 15rem;
+      }
+      #lastname {
+        width: 15rem;
+      }
+      #visitors {
+        width: 10rem;
+      }
     </style>
   </head>
 
@@ -26,48 +35,27 @@
     
     <ul>
       <li>
-        <em>Problem: Only a subset of people (devices) can access the site.</em>
+        <em>Only a subset of people (devices) can access a non-RWD site.</em>
         With RWD, the greatest number of people can access the site.
+        <em>Mobile-first</em> website design means using a desktop environment to code a website first for adequate functionality on a mobile touchscreen, and then enhancing the functionality on a laptop.
       </li>
       <li>
-        <em>Problem: There are too many different devices to design a site for.</em>
-        RWD supports many types of devices with a single, flexible design using breakpoints and flexible grids.
-        There are too many devices to target specifically, especially mobile touchscreen devices, which have a different user experience than laptop or desktop computers with keyboard and mouse.
-        Game consoles with a game controller provide yet another user experience.
-        Back when there were laptop screens and small smartphone displays, it seemed to make sense to target 2 or 3 specific devices.
-        But there are too many devices now, some with multiple display orientations, so it makes the most sense to sense the current viewport width and then place that within a given range, and define layouts for a given page dynamically, based on the current viewport width.
+        <em>There are too many different devices to design a site for, including mobile touchscreen devices, game consoles with game controllers, and desktop computers with keyboard and mouse.</em>
+        RWD supports many types of devices with a single, flexible design using breakpoints in media queries together with flexible grids, providing proportional, relative sizing of columns and rows.
       </li>
       <li>
-        <em>Problem: Non-mobile-friendly sites rank lower in search results.</em>
+        <em>With the m-dot approach, it is costly, slow, and complex to maintain a separate website for a wide and a narrow viewport width.</em>
+        The m-dot approach typically resulted in limited functionality, a subset of information, and outdated information.
+      </li>
+      <li>
+        <em>In the adaptive-design approach, it is cumbersome to serve out different versions of a web page from the server for different viewport widths.</em>
+      </li>
+      <li>
+        <em>Non-mobile-friendly sites rank lower in search results.</em>
         For SEO, mobile-friendly sites rank higher in search results.
         RWD makes it easy to provide mobile-friendly sites.
       </li>
-      <li>
-        <em>Mobile-first</em> website design means using a desktop environment to code a website for use on a mobile touchscreen.
-        RWD bridges this gap, making it easy to use a laptop to code a site mainly for mobile use.
-        Mobile-first helps prioritize the content: when coding a website on a laptop, make the browser window 1/4 of the screen width, and test the result on a mobile device.
-      </li>
-      <li>
-        It is difficult (costly, slow, and complex) to maintain a separate website for each viewport width, as is done with the m-dot approach.
-        In the <em>m-dot</em> approach, a separate version of the web site is created and maintained, for narrow, mobile displays.
-        For example, http://m.amazon.com.
-        This approach is difficult to maintain, and typically resulted in limited functionality, a subset of information, and outdated information.
-      </li>
-      <li>
-        It is cumbersome to serve out different versions of a web page from the server for different viewport widths, as is done in the adaptive-design approach.
-        In the <em>adaptive design</em> approach, the server takes in the width of the display, and then serves out a version of the page that targets that width.
-      </li>
     </ul>
-
-    <p>
-      <em>Responsive web design</em> dynamically lays out a webpage to fit within displays of various widths on various devices.
-      A flexible grid (fluid grid) is typically used, providing proportional, relative sizing of columns and rows.
-    </p>
-    <p>
-    </p>
-    <p>
-      <em>Media queries</em> in CSS define <em>breakpoints</em>, to change the layout when the width of the display (viewport) is within a specified range.
-    </p>
 
     <p>
       To request more information about responsive web design:
@@ -91,54 +79,66 @@
     -->
     <form>
 
-      <div class="form-group">
-        <label for="firstname">First name (required):</label>
-        <input type="text" class="form-control" id="firstname" required>
-      </div>
+      <fieldset class="form-group">
+        <legend>Personal information</legend>
 
-      <div class="form-group">
-        <label for="lastname">Last name (required):</label>
-        <input type="text" class="form-control" id="lastname" required>
-      </div>
-
-      <div class="form-group">
-        <label for="visitors">How many unique visitors does your website receive daily?</label>
-        <input type="number" class="form-control" id="visitors" min="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="goals">What would you like to accomplish with a website redesign?</label>
-        <textarea class="form-control" rows="5" id="goals"></textarea>
-      </div>
-      
-      <label>Email address (required):
-        <input type="email" name="email" required>
-      </label>
-      <br>
-
-      <label>Phone:
-        <input type="text" name="phone" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$">
-      </label>
-      <br>
-
-      <fieldset>
-        <legend>Type of site:</legend>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="personal" checked>
-          <label class="form-check-label" for="exampleRadios1">
-            Personal website
-          </label>
+        <div class="form-group">
+          <label for="firstname">First name (required):</label>
+          <input type="text" class="form-control" id="firstname" required>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="business">
-          <label class="form-check-label" for="exampleRadios2">
-            Business website
-          </label>
-        </div>
-      </fieldset>
-      <br>
 
-      <input type="submit" value="Send" name="submit">
+        <!-- in this Bootstrap field, the entered value DOESN'T appear in the URL after Send form: -->
+        <div class="form-group">
+          <label for="lastname">Last name (required):</label>
+          <input type="text" class="form-control" id="lastname" required>
+        </div>
+
+        <!-- in this non-Bootstrap field, the entered value APPEARS in the URL after Send form: -->
+        <label>Email address (required):
+          <input type="email" name="email" required>
+        </label>
+        <br>
+
+        <label>Phone:
+          <input type="text" name="phone" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$">
+        </label>
+
+      </fieldset>      
+
+      
+      <fieldset class="form-group">
+        <legend>Information about your site</legend>
+
+        <div class="form-group">
+          <label for="visitors">How many unique visitors does your website receive daily?</label>
+          <input type="number" class="form-control" id="visitors" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="goals">What would you like to accomplish with a website redesign?</label>
+          <textarea class="form-control" rows="5" id="goals"></textarea>
+        </div>
+        <fieldset>
+          <legend>Type of site:</legend>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sitetype" id="exampleRadios1" value="personal" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Personal website
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sitetype" id="exampleRadios2" value="business">
+            <label class="form-check-label" for="exampleRadios2">
+              Business website
+            </label>
+          </div>
+        </fieldset>
+      </fieldset>      
+
+      <!--non-Bootstrap:-->
+<!--      <input type="submit" value="Send" name="submit">-->
+      <!--Bootstrap:-->
+      <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
 

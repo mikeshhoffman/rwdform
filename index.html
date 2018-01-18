@@ -7,23 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS: -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <title>Assignment 1</title>
+    <title>RWD Form (Assignment 1)</title>
+    <style>
+      body {
+        margin: 2rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
 
     <h1>The problems that responsive web design solves</h1>
     
-    <p>Responsive web design solves the following problems:</p>
+    <p>Responsive web design (RWD) solves the following problems:</p>
     
     <ul>
       <li>
-        There are too many devices to target specifically.
+        <em>Problem: Only a subset of people (devices) can access the site.</em>
+        With RWD, the greatest number of people can access the site.
+      </li>
+      <li>
+        <em>Problem: There are too many different devices to design a site for.</em>
+        RWD supports many types of devices with a single, flexible design using breakpoints and flexible grids.
+        There are too many devices to target specifically, especially mobile touchscreen devices, which have a different user experience than laptop or desktop computers with keyboard and mouse.
+        Game consoles with a game controller provide yet another user experience.
         Back when there were laptop screens and small smartphone displays, it seemed to make sense to target 2 or 3 specific devices.
         But there are too many devices now, some with multiple display orientations, so it makes the most sense to sense the current viewport width and then place that within a given range, and define layouts for a given page dynamically, based on the current viewport width.
       </li>
       <li>
-        It is difficult to maintain a separate website for each viewport width, as is done with the m-dot approach.
+        <em>Problem: Non-mobile-friendly sites rank lower in search results.</em>
+        For SEO, mobile-friendly sites rank higher in search results.
+        RWD makes it easy to provide mobile-friendly sites.
+      </li>
+      <li>
+        <em>Mobile-first</em> website design means using a desktop environment to code a website for use on a mobile touchscreen.
+        RWD bridges this gap, making it easy to use a laptop to code a site mainly for mobile use.
+        Mobile-first helps prioritize the content: when coding a website on a laptop, make the browser window 1/4 of the screen width, and test the result on a mobile device.
+      </li>
+      <li>
+        It is difficult (costly, slow, and complex) to maintain a separate website for each viewport width, as is done with the m-dot approach.
         In the <em>m-dot</em> approach, a separate version of the web site is created and maintained, for narrow, mobile displays.
         For example, http://m.amazon.com.
         This approach is difficult to maintain, and typically resulted in limited functionality, a subset of information, and outdated information.
@@ -36,12 +61,12 @@
 
     <p>
       <em>Responsive web design</em> dynamically lays out a webpage to fit within displays of various widths on various devices.
-      A flexible grid is typically used.
+      A flexible grid (fluid grid) is typically used, providing proportional, relative sizing of columns and rows.
     </p>
     <p>
     </p>
     <p>
-      <em>Media queries</em> in CSS define <em>break points</em>, to change the layout when the width of the display (viewport) is within a specified range.
+      <em>Media queries</em> in CSS define <em>breakpoints</em>, to change the layout when the width of the display (viewport) is within a specified range.
     </p>
 
     <p>
@@ -51,7 +76,7 @@
     <!--
     The form should contain at least the following:
 
-    o  4 types of inputs (text, number, radio buttons, etc)
+    o  4 types of inputs (text, number, radio buttons, etc.)
     
     o  2 required fields
     
@@ -66,37 +91,35 @@
     -->
     <form>
 
-      <label>First name:
-        <input type="text" name="firstname" required>
-      </label>
+      <div class="form-group">
+        <label for="firstname">First name (required):</label>
+        <input type="text" class="form-control" id="firstname" required>
+      </div>
 
-      <label>Last name:
-        <input type="text" name="firstname">
-      </label>
-      <br><br>
+      <div class="form-group">
+        <label for="lastname">Last name (required):</label>
+        <input type="text" class="form-control" id="lastname" required>
+      </div>
 
-      <label>How many unique visitors does your website receive daily?
-        <input type="number" name="traffic">
-      </label>
-      <br><br>
-
-      <label>What would you like to accomplish with a website redesign?
-<!--        <input type="text" name="goals">-->
-        <textarea name="goals" rows="10" cols="30">
-          Goals
-        </textarea>
-      </label>
-      <br><br>
-
-      <label>Email address:
+      <div class="form-group">
+        <label for="visitors">How many unique visitors does your website receive daily?</label>
+        <input type="number" class="form-control" id="visitors" min="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="goals">What would you like to accomplish with a website redesign?</label>
+        <textarea class="form-control" rows="5" id="goals"></textarea>
+      </div>
+      
+      <label>Email address (required):
         <input type="email" name="email" required>
       </label>
-      <br><br>
+      <br>
 
       <label>Phone:
         <input type="text" name="phone" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$">
       </label>
-      <br><br>
+      <br>
 
       <fieldset>
         <legend>Type of site:</legend>
@@ -113,6 +136,7 @@
           </label>
         </div>
       </fieldset>
+      <br>
 
       <input type="submit" value="Send" name="submit">
 
